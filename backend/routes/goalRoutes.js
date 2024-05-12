@@ -11,8 +11,4 @@ const router = express.Router();
 router.route("/").get(getGoals).post(setGoals);
 router.route("/:id").put(updateGoals).delete(deleteGoals);
 
-router.put("/:id", updateGoals);
-
-router.delete("/:id", deleteGoals);
-
 export default router;
