@@ -1,6 +1,7 @@
 import express from "express";
 import colors from "colors";
-import goalRoutes from "./routes/goalRoutes.js";
+import { router as goalRoutes } from "./routes/goalRoutes.js";
+import { router as userRoutes } from "./routes/userRoutes.js";
 import { errorHandler } from "./middleware/errorMiddleware.js";
 import { connectDB } from "./config/db.js";
 
@@ -16,6 +17,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 app.use("/api/goals", goalRoutes);
+app.use("/api/users", userRoutes);
 app.use(errorHandler);
 
 app.listen(port, () => {

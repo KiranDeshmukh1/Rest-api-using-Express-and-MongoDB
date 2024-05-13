@@ -6,9 +6,7 @@ import {
   deleteGoals,
 } from "../controllers/goalController.js";
 
-const router = express.Router();
+export const router = express.Router();
 
 router.route("/").get(getGoals).post(setGoals);
 router.route("/:id").put(updateGoals).delete(deleteGoals);
-
-export default router;
