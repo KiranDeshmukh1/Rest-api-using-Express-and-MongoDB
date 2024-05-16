@@ -6,6 +6,11 @@ import { User } from "../models/userModel.js";
 //@desc register new user
 //@route POST /api/users
 //@access Public
+
+export const getAllUser = asyncHandler(async (req, res) => {
+  const user = await User.find();
+  res.status(200).json(user);
+});
 export const registerUser = asyncHandler(async (req, res) => {
   const { name, email, password } = req.body;
   if (!name || !email || !password) {
